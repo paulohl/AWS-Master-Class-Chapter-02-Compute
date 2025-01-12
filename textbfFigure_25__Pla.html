@@ -1,0 +1,62 @@
+<div><b>Figure 2.5</b> : Planning Kubernetes Upgrades with Amazon EKS</div><div>(<b>Source</b> : Jesse Butler, Amazon EKS, Containers)</div><div><b>Core Features</b> :</div><ul><li><b>Managed Kubernetes Control Plane</b> : Amazon EKS manages the
+Kubernetes control plane, including patches and upgrades, ensuring
+security and stability.</li><li><b>AWS Integration</b> : EKS integrates deeply with AWS services like<b>Amazon ECR</b> (Elastic Container Registry) for container image
+management, <b>Amazon VPC</b> for network isolation, and <b>AWS
+IAM</b> for secure access control.</li><li><b>Flexibility with EC2 and Fargate</b> : EKS offers two launch
+types—<b>EC2</b> , for users requiring control over underlying
+infrastructure, and <b>AWS Fargate</b> , a serverless option that
+eliminates infrastructure management.</li><li><b>Scalability and Resilience</b> : EKS scales containerized
+applications automatically using <b>Kubernetes Horizontal Pod
+Autoscaling (HPA)</b> , ensuring that resources are dynamically adjusted
+to meet demand.</li></ul><div>By leveraging these features, organizations can focus on building and
+deploying containerized applications, leaving AWS to handle the
+complexities of managing Kubernetes clusters.</div><h3 data-label="use-cases-and-efficiency-2" class="ltx_title_subsubsection">Use Cases and
+Efficiency</h3><div>Research such as <i>Kubernetes Cluster Resource Optimization in the
+Cloud</i> by Dennis Collaris et al. (2020) [15] highlights the
+significance of optimizing resources within Kubernetes clusters. The
+study explores how resource allocation can be tuned to improve
+efficiency, and Amazon EKS is well-equipped to address this by offering
+dynamic autoscaling capabilities, workload isolation through VPC, and
+granular resource management.</div><div><b>Real-World Applications</b> :</div><ul><li><b>E-Commerce Platforms</b> : Major e-commerce companies, like<b>Zalando</b> , use Amazon EKS to handle high traffic during sales
+events, dynamically scaling their web applications to meet customer
+demand. EKS enables them to maintain high availability [16] and
+performance while reducing operational overhead through automation.</li><li><b>Media Streaming</b> : Companies like <b>Disney+</b> leverage EKS
+to process and transcode videos at scale. With millions of concurrent
+users, they rely on EKS to scale containers across multiple
+availability zones, ensuring low-latency video delivery.</li><li><b>Financial Services</b> : <b>Goldman Sachs</b> uses Amazon EKS
+for managing critical financial services, ensuring that its
+microservices-based applications are highly available, secure, and
+scalable. EKS’s integration with AWS IAM ensures tight security
+controls while maintaining flexibility.</li><li><b>Gaming Industry</b> : Gaming companies such as <b>Riot
+Games</b> , the creators of League of Legends, rely on EKS to manage
+multiplayer gaming servers. EKS helps them scale their gaming
+infrastructure dynamically based on player load, maintaining
+performance during high-demand periods like tournament seasons.</li></ul><h3 data-label="best-practices-for-amazon-eks" class="ltx_title_subsubsection">Best Practices for Amazon
+EKS</h3><div>Amazon EKS offers many options for optimizing the deployment and
+management of Kubernetes applications. Below are some best practices for
+making the most of EKS:</div><ol><li><b>Optimize Resource Allocation</b> : Use <b>Kubernetes Resource
+Quotas</b> and <b>Pod Autoscaling</b> to ensure that your applications
+use resources efficiently without overprovisioning or underutilizing
+nodes.</li><li><b>Security Best Practices</b> : Leverage <b>IAM Roles for
+Service Accounts (IRSA)</b> to ensure that Kubernetes pods have the
+correct permissions for accessing AWS resources. Utilize <b>AWS
+Security Groups for Pods</b> for fine-grained networking controls at the
+pod level, enhancing security.</li><li><b>Networking and Scalability</b> : Use <b>Amazon VPC CNI
+plugin</b> for Kubernetes to manage networking in a scalable and secure
+way. Ensure that workloads are isolated through dedicated VPCs,
+subnets, and security groups to minimize risk.</li><li><b>Cost Optimization</b> : Implement <b>Fargate Spot</b> for
+running fault-tolerant workloads that can handle interruptions. This
+reduces costs significantly without compromising on scalability or
+availability.</li><li><b>Monitoring and Observability</b> : Integrate <b>AWS
+CloudWatch</b> [17] and <b>AWS X-Ray</b> to monitor EKS clusters
+and containers in real-time. This allows for quick identification and
+resolution of performance bottlenecks or failures.</li></ol><h3 data-label="case-study-snap-inc.s-global-scale-with-eks" class="ltx_title_subsubsection">Case Study: Snap Inc.’s Global Scale with
+EKS</h3><div><b>Snap Inc.</b> , the parent company of Snapchat, uses Amazon EKS to
+support its global network of users. With over 250 million daily active
+users, Snapchat relies on Kubernetes to manage microservices-based
+applications that handle billions of interactions every day. By
+migrating to Amazon EKS, Snap Inc. reduced infrastructure management
+overhead by 70% and ensured high availability across multiple regions.
+The ability to automatically scale resources during peak usage hours,
+such as during the rollout of new features, has been a game-changer for
+the company.</div>

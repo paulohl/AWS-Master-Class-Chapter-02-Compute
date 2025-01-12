@@ -1,0 +1,56 @@
+<div><b>Figure 2.8</b> : App Runner architecture and concepts</div><div>(<b>Source</b> : AWS Docs)</div><h3 data-label="key-use-cases" class="ltx_title_subsubsection">Key Use Cases:</h3><ul><li><b>Web Applications</b> : App Runner is ideal for deploying web
+applications that require seamless scaling and minimal manual
+intervention. E-commerce platforms can leverage App Runner to manage
+web traffic surges during peak seasons or flash sales.</li><li><b>APIs and Microservices</b> : App Runner’s automatic scaling and
+load balancing capabilities make it well-suited for microservices
+architectures. Organizations building API-driven products can use App
+Runner to ensure each service scales independently based on demand.</li><li><b>Containerized Workloads</b> : For developers who already use
+containers to package their applications, App Runner offers an
+efficient way to deploy and manage containerized workloads without
+managing the underlying infrastructure.</li></ul><div>AWS documentation also emphasizes App Runner’s efficiency in handling
+real-time scaling [26]. It automatically scales based on traffic,
+ensuring that applications remain available and cost-efficient. By
+eliminating the need for manual resource provisioning, App Runner
+reduces operational complexity for development teams.</div><h3 data-label="real-world-applications-of-aws-app-runner" class="ltx_title_subsubsection">Real-World Applications of AWS App
+Runner</h3><div>Several companies have adopted <b>AWS App Runner</b> to enhance their
+deployment processes. The following examples demonstrate its
+effectiveness in real-world scenarios:</div><ol><li><b>SaaS Startups</b> : A growing SaaS company needed to deploy its
+microservices-based architecture quickly to meet increasing customer
+demand. With AWS App Runner, the company automated the deployment of
+its services, allowing for rapid scaling during periods of high
+traffic. This reduced the need for additional DevOps resources and
+enabled the startup to focus on building features and acquiring
+customers.</li><li><b>E-commerce Platforms</b> : An online retailer leveraged App Runner
+to deploy its web application, ensuring seamless performance during
+high-traffic events like Black Friday. The automatic scaling feature
+allowed the retailer to manage increased traffic without having to
+pre-provision additional infrastructure, saving time and reducing
+costs.</li><li><b>Educational Platforms</b> : A cloud-based learning platform used
+App Runner to deploy its API services for managing student data and
+content delivery. With App Runner, the platform was able to scale its
+services in real time, ensuring that users had a smooth experience
+even during peak usage periods.</li></ol><div>These real-world applications highlight how AWS App Runner simplifies
+the deployment and scaling of applications while allowing organizations
+to maintain focus on business growth and feature development.</div><h3 data-label="best-practices-for-aws-app-runner" class="ltx_title_subsubsection">Best Practices for AWS App
+Runner</h3><div>To maximize the benefits of AWS App Runner, developers should follow
+these best practices:</div><ol><li><b>Optimize CI/CD Pipelines</b> : Integrate App Runner with<b>AWS CodePipeline</b> for efficient CI/CD workflows. Automating
+the deployment process ensures that new code updates are continuously
+tested and deployed, minimizing manual intervention.</li><li><b>Leverage Container Image Caching</b> : Use App Runner’s built-in
+support for <b>Amazon ECR</b> to store container images. Catching
+frequently used images can reduce deployment times and improve the
+speed of rolling out new features.</li><li><b>Monitor Performance and Costs</b> : Use <b>AWS CloudWatch</b> [17] to monitor the performance of applications deployed with App
+Runner. Track key metrics such as CPU utilization and request rates to
+ensure the application is operating within desired performance
+thresholds while also managing costs.</li><li><b>Use Auto Scaling Effectively</b> : Configure App Runner’s
+automatic scaling policies to match the needs of your application.
+Consider different scaling strategies based on expected traffic
+patterns to ensure efficient resource usage without overspending.</li></ol><h3 data-label="real-world-case-study-api-deployment-with-aws-app-runner" class="ltx_title_subsubsection">Real-World Case Study: API Deployment with AWS App
+Runner</h3><div><b>MedicaOne</b> , a healthcare technology company specializing in
+telemedicine, sought a simple yet scalable solution for deploying its
+API-driven services. By adopting <b>AWS App Runner</b> , MedicaOne was
+able to deploy its APIs quickly without the need to manage underlying
+servers or infrastructure. As user demand increased, App Runner’s
+automatic scaling ensured that the APIs remained responsive [26].
+Additionally, the integration with <b>AWS CodePipeline</b> allowed
+MedicaOne to automate its deployment processes, reducing deployment
+times from days to hours.</div>

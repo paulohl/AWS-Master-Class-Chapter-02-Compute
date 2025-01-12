@@ -1,0 +1,87 @@
+<div>Figure 1 AWS EC2 architecture components. (AWS Documentation)</div><h3 data-label="compute-1" class="ltx_title_subsubsection">Compute</h3><div>EC2 instances provide the virtual CPUs (vCPUs) necessary to handle the
+computing needs of your application. When launching an EC2 instance,
+users can choose from a variety of instance types that are optimized for
+different use cases, such as general-purpose, compute-optimized,
+memory-optimized, storage-optimized, and accelerated computing
+instances. Each instance type is defined by factors such as:</div><ul><li><b>Number of vCPUs:</b> The compute capacity is measured in virtual
+CPUs, which represent the number of processing cores allocated to the
+instance.</li><li><b>Hypervisor:</b> EC2 uses the Nitro hypervisor for bare-metal
+performance and enhanced security, with minimal overhead.</li><li><b>Instance Lifecycle:</b> Instances can be started, stopped, or
+terminated as required, making it easy to adjust resources based on
+demand.</li></ul><div>For example, a general-purpose instance like the <b>t3.micro</b> provides a balance of compute, memory, and network resources, making it
+ideal for small workloads like microservices. In contrast, a
+compute-optimized instance like <b>c6g.large</b> provides greater
+processing power and is suited for high-performance computing tasks,
+such as batch processing or machine learning model training.</div><h3 data-label="network" class="ltx_title_subsubsection">Network</h3><div>Networking is a critical part of EC2’s infrastructure, enabling secure
+and efficient communication between instances and external resources.
+Key networking components include:</div><ul><li><b>Elastic Network Interface (ENI):</b> An ENI is a logical
+networking component that can be attached to an instance to provide
+networking capabilities, including an IP address, MAC address, and
+security groups.</li><li><b>Elastic IP Addresses:</b> EC2 provides the ability to reserve
+static public IP addresses, known as Elastic IPs, which can be
+reassigned to any instance in your account, making failover or
+instance replacement more seamless.</li><li><b>Security Groups and Network Access Control Lists (ACLs):</b> Security groups act as virtual firewalls for EC2 instances,
+controlling inbound and outbound traffic. Network ACLs operate at the
+subnet level, providing an additional layer of security.</li><li><b>VPC (Virtual Private Cloud):</b> Each EC2 instance runs in a VPC,
+which allows for fine-grained control over the networking environment,
+including subnets, route tables, and internet gateways.</li></ul><h3 data-label="storage" class="ltx_title_subsubsection">Storage</h3><div>Amazon EC2 offers various types of storage to suit different application
+needs, from ephemeral instance storage to persistent block storage. The
+primary storage solutions available with EC2 include:</div><ul><li><b>Amazon Elastic Block Store (EBS):</b> EBS provides block-level
+storage that persists independently of the lifecycle of the EC2
+instance. EBS volumes can be attached to an instance and used to store
+data such as operating systems, applications, and databases. EBS
+volumes can be configured for different performance requirements, such
+as <b>gp3</b> (General Purpose SSD) for balanced performance or<b>io2</b> (Provisioned IOPS SSD) for high-performance storage.</li><li><b>Instance Store:</b> Instance store provides temporary block-level
+storage, which is directly attached to the physical server hosting the
+EC2 instance. This storage is ephemeral, meaning that data is lost
+when the instance is stopped or terminated. It’s useful for stateless
+applications or temporary data processing tasks.</li><li><b>Elastic File System (EFS):</b> EFS is a scalable, shared file
+system that can be attached to multiple EC2 instances simultaneously.
+It is ideal for scenarios where multiple instances need to read and
+write to the same file system, such as content management systems or
+distributed applications.</li></ul><h3 data-label="memory" class="ltx_title_subsubsection">Memory</h3><div>The memory resources of an EC2 instance play a crucial role in
+determining its performance, especially for applications that require
+large in-memory databases or complex data processing. EC2 offers
+memory-optimized instances that provide large amounts of RAM to handle
+memory-intensive tasks. These instances, such as <b>r5.large</b> , are
+ideal for real-time big data processing or high-performance computing
+applications that require rapid access to large datasets.</div><h3 data-label="elasticity-and-scalability" class="ltx_title_subsubsection">Elasticity and
+Scalability</h3><div>One of the primary strengths of EC2 is its elasticity—the ability to
+scale compute resources up or down based on demand. EC2 allows for
+vertical scaling (changing instance types) or horizontal scaling (adding
+or removing instances) [2]. This is particularly useful for
+applications with unpredictable workloads or traffic spikes.</div><div><b>Auto Scaling:</b> EC2 integrates with Auto Scaling groups to
+automatically increase or decrease the number of running instances
+based on predefined conditions, such as CPU usage, memory consumption,
+or network throughput. For example, an e-commerce site may use Auto
+Scaling to handle increased traffic during a sale and scale back down
+during off-peak hours, reducing costs without compromising
+performance.</div><div><b>Elastic Load Balancing (ELB):</b> ELB distributes incoming
+traffic across multiple EC2 instances, ensuring high availability and
+fault tolerance. By combining Auto Scaling and ELB, applications can
+dynamically adjust to varying loads without manual intervention.</div><h2 data-label="use-cases-for-ec2" class="ltx_title_subsection">Use Cases for EC2</h2><div>Amazon EC2 is versatile and can be applied across a wide range of
+industries and use cases, including:</div><ol><li><b>Web Hosting and Applications</b> : EC2 instances can serve as web
+servers that host dynamic websites, web applications, or RESTful APIs.
+Paired with services like Amazon RDS and S3, it provides a complete
+environment for modern web hosting.</li><li><b>Big Data and Analytics</b> : High-performance compute instances
+and memory-optimized instances are ideal for big data processing
+tasks, such as running Hadoop clusters or analyzing large datasets
+with Spark. EC2 allows organizations to process large volumes of data
+efficiently and on-demand.</li><li><b>Gaming</b> : Compute-optimized instances, like the <b>c6g</b> family, support game hosting and real-time multiplayer games by
+providing low-latency networking and compute power to handle large
+player loads.</li><li><b>High-Performance Computing (HPC)</b> [3]: EC2’s
+compute-optimized and accelerated instances enable complex scientific
+simulations, molecular modeling, and machine learning model training
+by providing powerful GPU support and high IOPS storage.</li><li><b>Disaster Recovery</b> : EC2’s ability to launch instances in
+different regions ensures high availability in disaster recovery
+scenarios. Organizations can failover workloads to another region in
+the event of a disruption, ensuring minimal downtime and continuity of
+operations.</li></ol><h2 data-label="wrapping-up" class="ltx_title_subsection">Wrapping up</h2><div>Amazon EC2 is the foundation of elastic computing in AWS, providing an
+expansive array of compute, networking, storage, and memory options that
+empower organizations to deploy and scale applications with ease. Its
+flexibility in instance configuration, combined with its integrated
+services for scaling and managing workloads [4], allows EC2 to meet
+the diverse needs of developers, enterprises, and startups alike. As we
+continue exploring EC2 in the following sections, we will uncover its
+advanced features and how it can be harnessed to build scalable,
+resilient, and cost-effective applications in the cloud.</div>

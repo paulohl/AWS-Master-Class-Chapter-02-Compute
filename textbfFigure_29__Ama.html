@@ -1,0 +1,69 @@
+<div><b>Figure 2.9</b> : Amazon EC2 Auto Scaling</div><div>(<b>Source</b> : AWS Docs)</div><h3 data-label="use-cases-and-efficiency-maximization" class="ltx_title_subsubsection">Use Cases and Efficiency
+Maximization</h3><div>Scholarly research highlights the significance of efficient autoscaling
+mechanisms in cloud environments. In the paper <i>Effective and
+Efficient Autoscaling in the Cloud: A Conceptual Framework</i> by Ahmed
+Ali-Eldin et al. (2012) [27], the authors emphasize the importance
+of autoscaling in managing resources optimally to meet application
+performance objectives while minimizing operational costs. Auto
+Scaling’s capacity to align resources with real-time demand plays a
+vital role in maximizing efficiency while reducing over-provisioning.</div><div>AWS Auto Scaling is widely used across various industries and
+application scenarios. Below are key use cases demonstrating its
+effectiveness:</div><ol><li><b>Web Applications</b> : Auto Scaling is invaluable for web
+applications that experience variable traffic throughout the day. For
+example, an e-commerce platform can experience traffic surges during
+promotions, holidays, or flash sales. With Auto Scaling, the platform
+dynamically provisions additional EC2 instances during high-traffic
+periods and reduces resources during off-peak hours, ensuring
+performance without excessive costs.</li><li><b>Batch Processing</b> : In batch processing scenarios, compute
+workloads can vary depending on the size and complexity of the jobs.
+Auto Scaling allows organizations to optimize the execution of these
+jobs by scaling up resources during peak processing times and scaling
+down during inactivity. This helps accelerate job completion while
+minimizing costs.</li><li><b>Microservices and Containerized Workloads</b> : For microservices
+architectures, where individual services may require different levels
+of compute power, Auto Scaling allows each service to scale
+independently. Auto Scaling works seamlessly with Amazon Elastic
+Kubernetes Service (EKS) and Elastic Container Service (ECS), enabling
+containerized applications to scale based on the performance of
+individual microservices.</li><li><b>Predictive Scaling for Streaming Services</b> : Streaming
+services, such as media and entertainment platforms, rely heavily on
+real-time autoscaling to handle varying viewer demands. During events
+like live sports or major releases, viewer numbers can spike
+significantly. Predictive scaling ensures that sufficient compute
+resources are available, preventing outages or latency issues without
+having idle resources when demand decreases.</li></ol><h3 data-label="real-world-applications-2" class="ltx_title_subsubsection">Real-World
+Applications</h3><div>Real-world examples illustrate how organizations leverage AWS Auto
+Scaling to optimize their cloud infrastructure:</div><ul><li><b>E-Commerce Platforms</b> : An e-commerce company, such as<b>Shopify</b> , uses Auto Scaling to handle unpredictable customer
+traffic during promotional events. By automatically provisioning more
+EC2 instances during periods of high traffic, Shopify ensures a
+seamless shopping experience for its users. After the promotion ends,
+the system scales back down, reducing operational costs.</li><li><b>Media Streaming</b> : Companies like <b>Netflix</b> utilize Auto
+Scaling to support their video streaming services. During peak times,
+when more users are streaming content, Netflix relies on Auto Scaling
+to dynamically add more instances to their backend infrastructure.
+This ensures that viewers experience uninterrupted playback while
+optimizing the company’s AWS bill by releasing instances during
+off-peak times.</li><li><b>Healthcare Platforms</b> : A telemedicine platform uses AWS Auto
+Scaling to manage patient interactions, adjusting infrastructure
+capacity in real time to handle spikes in consultation requests. This
+ensures that patients receive timely care without delays, even during
+high-traffic periods such as flu season or global pandemics.</li></ul><h3 data-label="best-practices-for-aws-auto-scaling" class="ltx_title_subsubsection">Best Practices for AWS Auto
+Scaling</h3><div>To effectively leverage the power of AWS Auto Scaling, organizations
+should adopt the following best practices:</div><ol><li><b>Set Appropriate Scaling Policies</b> : Establish clear policies
+based on your application’s unique workload characteristics. For
+example, use scheduled scaling for applications that experience
+predictable traffic patterns, such as nightly batch jobs, and dynamic
+scaling for applications with unpredictable workloads, such as online
+gaming platforms.</li><li><b>Monitor and Tune Scaling Metrics</b> : Utilize Amazon CloudWatch
+[17] to monitor key metrics such as CPU utilization, memory usage,
+and request latency. Adjust the scaling thresholds based on real-time
+data to ensure that Auto Scaling is triggered at the optimal time,
+preventing under-provisioning or over-provisioning of resources.</li><li><b>Leverage Predictive Scaling</b> : For applications with
+predictable workloads, configure predictive scaling to forecast demand
+and provision resources ahead of time. This can reduce the time it
+takes to scale up during traffic spikes, ensuring that your
+application remains responsive during peak times.</li><li><b>Combine with Cost Optimization Strategies</b> : Integrate Auto
+Scaling with <b>AWS Cost Explorer</b> to track spending and identify
+opportunities for cost optimization. Consider combining On-Demand
+instances with <b>EC2 Reserved Instances</b> or <b>Spot
+Instances</b> to further reduce costs without sacrificing performance.</li></ol>
